@@ -54,21 +54,19 @@
             Constructs a new instance of the database file
             </summary>
         </member>
-        <member name="M:Penguin.Cms.Files.DatabaseFile.#ctor(System.String,System.String,System.String)">
+        <member name="M:Penguin.Cms.Files.DatabaseFile.#ctor(System.String,System.String)">
             <summary>
             Constructs a new instance of the database file by reading in the specified file off disk
             </summary>
             <param name="filePath">The path the the file to read</param>
             <param name="fileName">An optional override file name to assign</param>
-            <param name="mimeType">An optional MimeType override</param>
         </member>
-        <member name="M:Penguin.Cms.Files.DatabaseFile.#ctor(System.Byte[],System.String,System.String)">
+        <member name="M:Penguin.Cms.Files.DatabaseFile.#ctor(System.Byte[],System.String)">
             <summary>
             Constructs a new instance of the database file using the specified byte array as a data source
             </summary>
             <param name="bytes">The byte array representing the file contents</param>
             <param name="fileName">The name to give the file</param>
-            <param name="mimeType">An optional MimeType to assign the file</param>
         </member>
         <member name="M:Penguin.Cms.Files.Extensions.FileServiceExtensions.FillData(Penguin.Services.Files.FileService,Penguin.Cms.Files.DatabaseFile)">
             <summary>

@@ -1,4 +1,5 @@
 ﻿using Penguin.Services.Files;
+using System.Diagnostics.Contracts;
 using System.IO;
 
 namespace Penguin.Cms.Files.Extensions
@@ -15,6 +16,8 @@ namespace Penguin.Cms.Files.Extensions
         /// <param name="df">The database file containing the file definition, and the target of the fill</param>
         public static void FillData(this FileService fs, DatabaseFile df)
         {
+            Contract.Requires(df != null);
+
             if (df.Data.Length == 0 && File.Exists(df.FullName))
             {
                 df.Data = File.ReadAllBytes(df.FullName);

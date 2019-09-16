@@ -18,7 +18,7 @@ namespace Penguin.Cms.Files
         /// <summary>
         /// A byte array representing the file data
         /// </summary>
-        [DontAllow(DisplayContext.Any)]
+        [DontAllow(DisplayContexts.Any)]
         public byte[] Data { get; set; }
 
         /// <summary>
@@ -37,14 +37,14 @@ namespace Penguin.Cms.Files
         /// The full tree path to the file for recursive heirarchies
         /// </summary>
 
-        [DontAllow(DisplayContext.Edit | DisplayContext.BatchEdit)]
+        [DontAllow(DisplayContexts.Edit | DisplayContexts.BatchEdit)]
         public string FilePath { get; set; }
 
         /// <summary>
         /// The FilePath + File Name
         /// </summary>
 
-        [DontAllow(DisplayContext.Edit | DisplayContext.BatchEdit)]
+        [DontAllow(DisplayContexts.Edit | DisplayContexts.BatchEdit)]
         public string FullName => Path.Combine(this.FilePath ?? "", this.FileName ?? "");
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Penguin.Cms.Files
         /// <summary>
         /// The size of the file
         /// </summary>
-        [DontAllow(DisplayContext.Edit | DisplayContext.BatchEdit)]
+        [DontAllow(DisplayContexts.Edit | DisplayContexts.BatchEdit)]
         public long Length { get; set; }
 
         /// <summary>
@@ -79,8 +79,7 @@ namespace Penguin.Cms.Files
         /// </summary>
         /// <param name="filePath">The path the the file to read</param>
         /// <param name="fileName">An optional override file name to assign</param>
-        /// <param name="mimeType">An optional MimeType override</param>
-        public DatabaseFile(string filePath, string fileName = "", string mimeType = "")
+        public DatabaseFile(string filePath, string fileName = "")
         {
             this.Data = File.ReadAllBytes(filePath);
             this.Length = this.Data.Length;
@@ -92,8 +91,7 @@ namespace Penguin.Cms.Files
         /// </summary>
         /// <param name="bytes">The byte array representing the file contents</param>
         /// <param name="fileName">The name to give the file</param>
-        /// <param name="mimeType">An optional MimeType to assign the file</param>
-        public DatabaseFile(byte[] bytes, string fileName, string mimeType = "")
+        public DatabaseFile(byte[] bytes, string fileName)
         {
             this.Data = bytes;
             this.FileName = fileName;
