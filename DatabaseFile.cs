@@ -1,4 +1,5 @@
-﻿using Penguin.Cms.Security;
+﻿using Penguin.Cms.Entities;
+using Penguin.Cms.Security;
 using Penguin.Files.Abstractions;
 using Penguin.Persistence.Abstractions.Attributes.Control;
 using Penguin.Persistence.Abstractions.Attributes.Relations;
@@ -11,7 +12,7 @@ namespace Penguin.Cms.Files
     /// An entity containing file information with the intent of being stored in a database and tracked as an entity from within a CMS
     /// </summary>
     [Table("DatabaseFiles")]
-    public class DatabaseFile : PermissionableEntity, IFile
+    public class DatabaseFile : UserAuditableEntity, IFile
     {
         #region Properties
 
