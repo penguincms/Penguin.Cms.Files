@@ -9,7 +9,6 @@
  <ItemGroup>
    <PackageReference Include="Penguin.Cms.Security" Version="3.3.1" />
    <PackageReference Include="Penguin.Files.Abstractions" Version="2.0.0" />
-   <PackageReference Include="Penguin.Persistence.Abstractions" Version="2.1.5" />
    <PackageReference Include="Penguin.Services.Files" Version="2.0.1" />
  </ItemGroup>
 </Project>
