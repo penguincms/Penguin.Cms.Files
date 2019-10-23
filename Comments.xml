@@ -68,12 +68,5 @@
             <param name="bytes">The byte array representing the file contents</param>
             <param name="fileName">The name to give the file</param>
         </member>
-        <member name="M:Penguin.Cms.Files.Extensions.FileServiceExtensions.FillData(Penguin.Services.Files.FileService,Penguin.Cms.Files.DatabaseFile)">
-            <summary>
-            If the file requested exists on disk, this populates the internal byte array with its contents
-            </summary>
-            <param name="fs">The file service providing access (not required?)</param>
-            <param name="df">The database file containing the file definition, and the target of the fill</param>
-        </member>
     </members>
 </doc>

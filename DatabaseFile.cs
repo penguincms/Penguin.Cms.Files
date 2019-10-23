@@ -1,5 +1,4 @@
 ﻿using Penguin.Cms.Entities;
-using Penguin.Cms.Security;
 using Penguin.Files.Abstractions;
 using Penguin.Persistence.Abstractions.Attributes.Control;
 using Penguin.Persistence.Abstractions.Attributes.Relations;
@@ -12,10 +11,8 @@ namespace Penguin.Cms.Files
     /// An entity containing file information with the intent of being stored in a database and tracked as an entity from within a CMS
     /// </summary>
     [Table("DatabaseFiles")]
-    public class DatabaseFile : UserAuditableEntity, IFile
+    public class DatabaseFile : AuditableEntity, IFile
     {
-        #region Properties
-
         /// <summary>
         /// A byte array representing the file data
         /// </summary>
@@ -34,6 +31,7 @@ namespace Penguin.Cms.Files
 
         public string FileName { get; set; }
 
+
         /// <summary>
         /// The full tree path to the file for recursive heirarchies
         /// </summary>
@@ -46,7 +44,15 @@ namespace Penguin.Cms.Files
         /// </summary>
 
         [DontAllow(DisplayContexts.Edit | DisplayContexts.BatchEdit)]
-        public string FullName => Path.Combine(this.FilePath ?? "", this.FileName ?? "");
+        public string FullName { 
+            get { 
+                return Path.Combine(this.FilePath ?? "", this.FileName ?? ""); 
+            }
+            set { 
+                this.FileName = Path.GetFileName(value);
+                FilePath = new FileInfo(value).Directory.FullName;
+            } 
+        }
 
         /// <summary>
         /// If true, this node represents a folder containing files in a tree and not a concrete file
@@ -63,10 +69,6 @@ namespace Penguin.Cms.Files
         /// A Guid representing an entity that this file is owned by (Ex an Email guid if this is an email attachment)
         /// </summary>
         public Guid Owner { get; set; }
-
-        #endregion Properties
-
-        #region Constructors
 
         /// <summary>
         /// Constructs a new instance of the database file
@@ -97,7 +99,5 @@ namespace Penguin.Cms.Files
             this.Data = bytes;
             this.FileName = fileName;
         }
-
-        #endregion Constructors
     }
 }
