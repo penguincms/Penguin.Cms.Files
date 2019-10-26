@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -6,8 +6,8 @@
     <Version>2.0.2</Version>
     <Description>Contains a DatabaseFile class intended to allow for treating files as entities in a CMS implemenation, allowing them to be logged, permissioned, and persisted in a database</Description>
   </PropertyGroup>
- <ItemGroup>
-   <PackageReference Include="Penguin.Cms.Entities" Version="3.0.3" />
-   <PackageReference Include="Penguin.Files.Abstractions" Version="2.0.1" />
- </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Penguin.Files.Abstractions" Version="2.0.1" />
+    <PackageReference Include="Penguin.Cms.Entities" Version="3.0.3-63707652289" />
+  </ItemGroup>
 </Project>

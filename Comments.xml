@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Penguin.Cms.Files.Local</name>
+        <name>Penguin.Cms.Files</name>
     </assembly>
     <members>
         <member name="T:Penguin.Cms.Files.DatabaseFile">
