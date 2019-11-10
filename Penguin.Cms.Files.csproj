@@ -9,7 +9,7 @@
     <RootNamespace>Penguin.Cms.Files</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.Cms.Entities" Version="3.0.4-T9MJL4F" />
     <PackageReference Include="Penguin.Files.Abstractions" Version="2.0.2-T9MJL4F" />
+    <PackageReference Include="Penguin.Cms.Entities" Version="3.0.4-T9MNBFG" />
   </ItemGroup>
 </Project>
