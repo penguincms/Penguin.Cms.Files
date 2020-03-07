@@ -31,7 +31,6 @@ namespace Penguin.Cms.Files
 
         public string FileName { get; set; }
 
-
         /// <summary>
         /// The full tree path to the file for recursive heirarchies
         /// </summary>
@@ -44,14 +43,14 @@ namespace Penguin.Cms.Files
         /// </summary>
 
         [DontAllow(DisplayContexts.Edit | DisplayContexts.BatchEdit)]
-        public string FullName { 
-            get { 
-                return Path.Combine(this.FilePath ?? "", this.FileName ?? ""); 
-            }
-            set { 
+        public string FullName
+        {
+            get => Path.Combine(this.FilePath ?? "", this.FileName ?? "");
+            set
+            {
                 this.FileName = Path.GetFileName(value);
-                FilePath = new FileInfo(value).Directory.FullName;
-            } 
+                this.FilePath = new FileInfo(value).Directory.FullName;
+            }
         }
 
         /// <summary>
