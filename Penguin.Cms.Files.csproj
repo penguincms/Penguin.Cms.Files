@@ -3,14 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageProjectUrl>https://github.com/penguincms/Penguin.Cms.Files</PackageProjectUrl>
-    <Version>5.0.0</Version>
+    <Version>5.0.1</Version>
     <Description>Contains a DatabaseFile class intended to allow for treating files as entities in a CMS implemenation, allowing them to be logged, permissioned, and persisted in a database</Description>
     <AssemblyName>Penguin.Cms.Files</AssemblyName>
     <RootNamespace>Penguin.Cms.Files</RootNamespace>
     <DocumentationFile>Penguin.Cms.Files.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.Files.Abstractions" Version="5.0.1-TA99DVY" />
-    <PackageReference Include="Penguin.Cms.Entities" Version="5.0.1-TA99DVY" />
+    <PackageReference Include="Penguin.Files.Abstractions" Version="5.0.2-TA9KKLU" />
+    <PackageReference Include="Penguin.Cms.Entities" Version="5.0.2-TA9KKLU" />
   </ItemGroup>
 </Project>
