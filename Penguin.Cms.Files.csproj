@@ -2,7 +2,7 @@
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageProjectUrl>https://github.com/penguincms/Penguin.Cms.Files</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/PenguinCMS/Penguin.Cms.Files</PackageProjectUrl>
     <Version>5.0.5</Version>
     <Description>Contains a DatabaseFile class intended to allow for treating files as entities in a CMS implemenation, allowing them to be logged, permissioned, and persisted in a database</Description>
     <AssemblyName>Penguin.Cms.Files</AssemblyName>
@@ -10,7 +10,7 @@
     <DocumentationFile>Penguin.Cms.Files.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.Files.Abstractions" Version="5.0.4" />
-    <PackageReference Include="Penguin.Cms.Entities" Version="5.0.6-TAEO1KM" />
+    <PackageReference Include="Penguin.Files.Abstractions" Version="5.0.6-TAHULSY" />
+    <PackageReference Include="Penguin.Cms.Entities" Version="5.0.6-TAHULSY" />
   </ItemGroup>
 </Project>
