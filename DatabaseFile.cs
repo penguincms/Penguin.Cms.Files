@@ -17,7 +17,7 @@ namespace Penguin.Cms.Files
         /// A byte array representing the file data
         /// </summary>
         [DontAllow(DisplayContexts.Any)]
-        public byte[] Data { get; set; }
+        public byte[] Data { get; set; } = Array.Empty<byte>();
 
         /// <summary>
         /// Attempts to return the extension of the file based on the FileName
