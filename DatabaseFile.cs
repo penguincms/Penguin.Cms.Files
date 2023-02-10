@@ -23,7 +23,7 @@ namespace Penguin.Cms.Files
         /// Attempts to return the extension of the file based on the FileName
         /// </summary>
         [NotMapped]
-        public string Extension => Path.GetExtension(this.FileName);
+        public string Extension => Path.GetExtension(FileName);
 
         /// <summary>
         /// The FileName of the file being stored
@@ -45,11 +45,11 @@ namespace Penguin.Cms.Files
         [DontAllow(DisplayContexts.Edit | DisplayContexts.BatchEdit)]
         public string FullName
         {
-            get => Path.Combine(this.FilePath ?? "", this.FileName ?? "");
+            get => Path.Combine(FilePath ?? "", FileName ?? "");
             set
             {
-                this.FileName = Path.GetFileName(value);
-                this.FilePath = new FileInfo(value).Directory.FullName;
+                FileName = Path.GetFileName(value);
+                FilePath = new FileInfo(value).Directory.FullName;
             }
         }
 
@@ -83,9 +83,9 @@ namespace Penguin.Cms.Files
         /// <param name="fileName">An optional override file name to assign</param>
         public DatabaseFile(string filePath, string fileName = "")
         {
-            this.Data = File.ReadAllBytes(filePath);
-            this.Length = this.Data.Length;
-            this.FileName = string.IsNullOrWhiteSpace(this.FileName) ? Path.GetFileName(filePath) : fileName;
+            Data = File.ReadAllBytes(filePath);
+            Length = Data.Length;
+            FileName = string.IsNullOrWhiteSpace(FileName) ? Path.GetFileName(filePath) : fileName;
         }
 
         /// <summary>
@@ -95,8 +95,8 @@ namespace Penguin.Cms.Files
         /// <param name="fileName">The name to give the file</param>
         public DatabaseFile(byte[] bytes, string fileName)
         {
-            this.Data = bytes;
-            this.FileName = fileName;
+            Data = bytes;
+            FileName = fileName;
         }
     }
 }
